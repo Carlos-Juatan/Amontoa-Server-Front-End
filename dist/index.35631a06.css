@@ -1,2 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+.amount {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+}
+
+#all-links {
+  width: 40%;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+li {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 16px;
+  list-style: none;
+}
 /*# sourceMappingURL=index.35631a06.css.map */
