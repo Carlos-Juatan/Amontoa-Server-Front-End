@@ -1,4 +1,4 @@
-import { fetchData, getGroups  } from './services.js';
+import { fetchData, getGroups } from './services.js';
 
 export async function showLinks() {
   try {
@@ -40,13 +40,16 @@ export async function createGroupsList(formElement) {
 }
 
 function createSelectedElemente(groups) {
-  const select = document.createElement('select');
-  select.id = 'mySelect'; // Atribui um ID ao select
+  const select = document.getElementById('mySelect');
 
-  groups.forEach(item => {
+  const allNames = groups.map(group => group.nome);
+  const allIds = groups.map(group => group._id);
+
+  allNames.forEach((name, index) => {
     const option = document.createElement('option');
-    option.value = item;
-    option.textContent = item;
+    option.value = name;
+    option.textContent = name;
+    option.id = allIds[index];
     select.appendChild(option);
   });
 

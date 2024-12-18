@@ -14,23 +14,23 @@ export async function fetchData() {
   export async function getGroups() {
     const response = await fetch(process.env.API_URL);
     const data = await response.json();
-    const groups = data.map(group => group.nome);
+    const groups = data.map(group => ({ _id: group._id, nome: group.nome }));
     return groups;
   }
 
-  export async function sendFormData(data) {
+  export async function sendFormData(data, id) {
     // Construção da URL (ajustar conforme necessário)
     let urlApi = process.env.API_POST_URL;
-    /*
-    if (selectGrupo !== 'novo') {
-      urlApi = process.env.API_PUT_URL;
+    let methodTried = 'POST';
+    if (id) {
+      urlApi = `${process.env.API_PUT_URL.replace(':id', id)}`;
+      methodTried =  'PUT';
     }
-    */
   
     // Envia os dados para o servidor usando fetch
     try {
       const response = await fetch(urlApi, {
-        method: 'POST',
+        method: methodTried,
         headers: {
           'Content-Type': 'application/json'
         },
