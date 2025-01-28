@@ -22,17 +22,9 @@
     "email": "",
     "url": ""
   },
-  "contributors": [
-
-  ],
+  "contributors": [],
   "scripts": {
     "dev": "npx parcel --port 8000 index.html",
-    "test": ""
-  },
-  "dependencies": {
-
-  },
-  "devDependencies": {
-
+    "start": "npx parcel --port 8000 index.html"
   }
 }

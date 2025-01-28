@@ -1,0 +1,7 @@
+.parce-cache
+dist
+.git
+.gitattributes
+.gitignore
+LICENSE
+README.md
