@@ -5,11 +5,17 @@ services:
     build: ./
     image: amontoa_server_front-end
     container_name: front-end
-    env_file:
-      - .env
     restart: always
     command: npm start
     ports:
       - 8000:8000
     volumes:
-      - ./:/urs/amontoa/frontend
+      - storage:/urs/amontoa/frontend
+
+volumes:
+  storage:
+    driver: local
+    driver_opts:
+      device: tmpfs
+      o: size=100000,uid-1000
+      type: tmpfs
