@@ -10,12 +10,4 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - storage:/urs/amontoa/frontend
-
-volumes:
-  storage:
-    driver: local
-    driver_opts:
-      device: tmpfs
-      o: size=100000,uid-1000
-      type: tmpfs
+      - ./:/urs/amontoa/frontend/
